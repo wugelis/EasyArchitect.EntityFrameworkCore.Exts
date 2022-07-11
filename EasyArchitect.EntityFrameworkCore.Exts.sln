@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyArchitect.EntityFrameworkCore.Exts", "EasyArchitect.EntityFrameworkCore.Exts\EasyArchitect.EntityFrameworkCore.Exts.csproj", "{022ACFC6-DEA1-4146-AD44-6365CBF90EC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{3F5E25CA-1D55-4076-9270-48EE004AAA59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{BDAF640C-111E-4158-8C7E-9248116440E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{915789EA-790F-4DC8-BDE0-A89E6A4CE909}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyArchitect.EntityFrameworkCore.ExtsTests", "EasyArchitect.EntityFrameworkCore.ExtsTests\EasyArchitect.EntityFrameworkCore.ExtsTests.csproj", "{84410161-1E49-44FB-8B1E-D7FDEC775D45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{022ACFC6-DEA1-4146-AD44-6365CBF90EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022ACFC6-DEA1-4146-AD44-6365CBF90EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022ACFC6-DEA1-4146-AD44-6365CBF90EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022ACFC6-DEA1-4146-AD44-6365CBF90EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84410161-1E49-44FB-8B1E-D7FDEC775D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84410161-1E49-44FB-8B1E-D7FDEC775D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84410161-1E49-44FB-8B1E-D7FDEC775D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84410161-1E49-44FB-8B1E-D7FDEC775D45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{022ACFC6-DEA1-4146-AD44-6365CBF90EC6} = {BDAF640C-111E-4158-8C7E-9248116440E4}
+		{84410161-1E49-44FB-8B1E-D7FDEC775D45} = {3F5E25CA-1D55-4076-9270-48EE004AAA59}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76BCCE7E-B062-4B21-AE74-CE63AF1C4741}
+	EndGlobalSection
+EndGlobal

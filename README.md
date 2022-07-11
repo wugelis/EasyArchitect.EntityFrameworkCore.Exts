@@ -1,0 +1,1 @@
+# Microsoft Entity Framework Core 的擴充方法：提供取代 .NET 6 不支援的 Database.ExecuteSqlCommand() 方法
