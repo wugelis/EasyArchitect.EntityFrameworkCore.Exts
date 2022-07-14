@@ -5,6 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+    <Authors>Gelis</Authors>
+    <Company>軟體開發之路</Company>
+    <Product>EasyArchitect</Product>
+    <Copyright>Gelis</Copyright>
+    <PackageProjectUrl>http://gelis-dotnet.blogspot.com/</PackageProjectUrl>
   </PropertyGroup>
 
 	<ItemGroup>

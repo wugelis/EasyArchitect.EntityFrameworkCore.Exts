@@ -25,7 +25,22 @@ namespace EasyArchitect.EntityFrameworkCore.Exts
 
             var command = connection.CreateCommand();
             command.CommandText = sqlStatement;
+#pragma warning disable CS8603 // 可能有 Null 參考傳回。
             return await command.ExecuteScalarAsync();
+#pragma warning restore CS8603 // 可能有 Null 參考傳回。
+        }
+        /// <summary>
+        /// 提供查詢資料庫方法。
+        /// 說明：由你的 Entity Framework Provider 決定使用何種資料庫，並傳入適當的 SQL 敘述
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="context">DbContext</param>
+        /// <param name="sqlStatement">SQL 敘述</param>
+        /// <returns></returns>
+        public static async Task<IEnumerable<T>> SqlQuery<T>(this DbContext context, string sqlStatement)
+            where T : class, new()
+        {
+            return await SqlQuery<T>(context, sqlStatement, null);
         }
         /// <summary>
         /// 提供查詢資料庫方法。
@@ -47,6 +62,7 @@ namespace EasyArchitect.EntityFrameworkCore.Exts
 
             var command = connection.CreateCommand();
             command.CommandText = sqlStatement;
+            BuildSqlParameters(sqlParameters, command);
 
             DbDataReader reader = await command.ExecuteReaderAsync();
 
@@ -126,6 +142,17 @@ namespace EasyArchitect.EntityFrameworkCore.Exts
 
             var command = connection.CreateCommand();
             command.CommandText = sqlStatement;
+            BuildSqlParameters(sqlParameters, command);
+
+            await command.ExecuteNonQueryAsync();
+        }
+        /// <summary>
+        /// 建立 SqlParameters
+        /// </summary>
+        /// <param name="sqlParameters"></param>
+        /// <param name="command"></param>
+        private static void BuildSqlParameters(DbParames[]? sqlParameters, DbCommand command)
+        {
             if (sqlParameters != null && sqlParameters.Length > 0)
             {
                 foreach (var p in sqlParameters)
@@ -134,9 +161,8 @@ namespace EasyArchitect.EntityFrameworkCore.Exts
                     command.Parameters.Add(param);
                 }
             }
-
-            await command.ExecuteNonQueryAsync();
         }
+
         /// <summary>
         /// 取得 DbParameter 執行個體
         /// </summary>
