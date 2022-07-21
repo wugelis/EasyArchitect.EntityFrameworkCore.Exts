@@ -11,7 +11,17 @@
     <Product>EasyArchitect</Product>
     <Copyright>Gelis</Copyright>
     <PackageProjectUrl>http://gelis-dotnet.blogspot.com/</PackageProjectUrl>
+    <Description>Microsoft Entity Framework Core 的擴充方法：提供取代 .NET 6 不支援的 Database.ExecuteSqlCommand() 方法</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/wugelis/EasyArchitect.EntityFrameworkCore.Exts</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
