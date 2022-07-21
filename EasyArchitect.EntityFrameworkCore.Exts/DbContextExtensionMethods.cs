@@ -106,7 +106,9 @@ namespace EasyArchitect.EntityFrameworkCore.Exts
                                 case "System.DateTime":
                                     pInfo.SetValue(row, reader.GetDateTime(foundColumn));
                                     break;
-
+                                case "System.Boolean":
+                                    pInfo.SetValue(row, reader.GetBoolean(foundColumn));
+                                    break;
                                 // 補上其他型態：
                                 // case "":
                                 //  break;
