@@ -134,7 +134,7 @@ namespace EasyArchitect.EntityFrameworkCore.Exts
         /// <param name="sqlStatement">要執行的非查詢 Sql 語句，如：INSERT or DELETE or UPDATE</param>
         /// <param name="sqlParameters">DbParames 傳遞 DbParameters</param>
         /// <returns></returns>
-        public static async Task ExecuteSqlCommand(this DbContext context, string sqlStatement, DbParames[] sqlParameters = null)
+        public static async Task<int> ExecuteSqlCommand(this DbContext context, string sqlStatement, DbParames[] sqlParameters = null)
         {
             DbConnection connection = context.Database.GetDbConnection();
             if (connection.State == ConnectionState.Closed)
@@ -146,7 +146,7 @@ namespace EasyArchitect.EntityFrameworkCore.Exts
             command.CommandText = sqlStatement;
             BuildSqlParameters(sqlParameters, command);
 
-            await command.ExecuteNonQueryAsync();
+            return await command.ExecuteNonQueryAsync();
         }
         /// <summary>
         /// 建立 SqlParameters
